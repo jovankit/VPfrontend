@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BasketballService } from 'src/app/basketball.service';
+import { Game } from 'src/app/model/Game';
 
 @Component({
   selector: 'app-list-games',
@@ -7,14 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListGamesComponent implements OnInit {
 
-  teams:Team[]=[]
+  games:Game[]=[]
 
   constructor(private service:BasketballService,private router:Router) { }
 
   ngOnInit(): void {
-    this.service.getAllTeams().subscribe({
+    this.service.getAllGames().subscribe({
       next:(data)=>{
-        this.teams=data
+        this.games=data
       },
       error:(error)=>{
         console.log(error)
@@ -23,8 +26,8 @@ export class ListGamesComponent implements OnInit {
   }
 
   delete(id:Number){
-    this.service.deleteTeam(id).subscribe()
-    window.location.href='/teams'
+    this.service.deleteGame(id).subscribe()
+    window.location.href='/games'
   }
 
 }

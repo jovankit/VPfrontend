@@ -157,7 +157,6 @@ export class BasketballService {
   }
 
   saveGame(
-    name:String,
     result:String,
     dateOfMaintenance:Date,
     refereesId:Number[],
@@ -167,7 +166,6 @@ export class BasketballService {
     players:Number[]
   ):Observable<Game>{
     return this.http.post<Game>("http://localhost:9080/api/games/add",{
-      "name":name,
       "result":result,
       "dateOfMaintenance":dateOfMaintenance,
       "refereesId":refereesId,
@@ -180,7 +178,6 @@ export class BasketballService {
 
   editGame(
     id:Number,
-    name:String,
     result:String,
     dateOfMaintenance:Date,
     refereesId:Number[],
@@ -190,7 +187,6 @@ export class BasketballService {
     players:Number[]
   ):Observable<Game>{
     return this.http.put<Game>(`http://localhost:9080/api/games/edit/${id}`,{
-      "name":name,
       "result":result,
       "dateOfMaintenance":dateOfMaintenance,
       "refereesId":refereesId,

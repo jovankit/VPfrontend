@@ -3,28 +3,26 @@
     <table class="table">
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Address</td>
-                <td>Sponsor</td>
-                <td>Home Field</td>
-                <td>Points</td>
+                <td>Date</td>
+                <td>Home team</td>
+                <td>Away team</td>
+                <td>Result</td>
                 <td></td>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let t of teams" routerLink="/teams/get/{{t.id}}" class="choose">
-                <td>{{t.name}}</td>
-                <td>{{t.address}}</td>
-                <td>{{t.sponsor}}</td>
-                <td>{{t.homeField}}</td>
-                <td>{{t.points}}</td>
+            <tr *ngFor="let g of games" routerLink="/games/get/{{g.id}}" class="choose">
+                <td>{{g.dateOfMaintenance}}</td>
+                <td>{{g.homeTeam}}</td>
+                <td>{{g.awayTeam}}</td>
+                <td>{{g.result}}</td>
                 <td>
-                    <input type="button" value="Edit" routerLink="/teams/add/{{t.id}}" class="btn btn-info">
-                    <input type="button" value="Delete" (click)="delete(t.id)" class="btn btn-danger">
+                    <input type="button" value="Edit" routerLink="/games/add/{{g.id}}" class="btn btn-info">
+                    <input type="button" value="Delete" (click)="delete(g.id)" class="btn btn-danger">
                 </td>
             </tr>
         </tbody>
     </table>
-    <input type="button" value="Add Team" class="btn btn-info" routerLink="/teams/add">
+    <input type="button" value="Add Team" class="btn btn-info" routerLink="/games/add">
 </div>
 
