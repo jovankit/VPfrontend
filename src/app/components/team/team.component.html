@@ -1,4 +1,14 @@
 <app-nav-bar></app-nav-bar>
+<div class="text-center">
+    <h1>{{team?.name}}</h1>
+    <br>
+    <div>Address: {{team?.address}}</div>
+    <div>Sponsor: {{team?.sponsor}}</div>
+    <div>Home Field: {{team?.homeField}}</div>
+    <div>Points: {{team?.points}}</div>
+    <br>
+</div>
+
 <div class="container">
     <table class="table">
         <thead>
@@ -12,7 +22,6 @@
                 <td>RPG</td>
                 <td>MPG</td>
                 <td>Games Played</td>
-                <td></td>
             </tr>
         </thead>
         <tbody>
@@ -26,13 +35,27 @@
                 <td>{{p.rpg}}</td>
                 <td>{{p.mpg}}</td>
                 <td>{{p.gamesPlayed}}</td>
-                <td>
-                    <input type="button" value="Edit" routerLink="/players/add/{{p.id}}" class="btn btn-info">
-                    <input type="button" value="Delete" (click)="delete(p.id)" class="btn btn-danger">
-                </td>
             </tr>
         </tbody>
     </table>
-    <input type="button" value="Add Player" class="btn btn-info" routerLink="/players/add">
 </div>
-
+<br>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Coach type</td>
+                <td>Team</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of coaches">
+                <td>{{c.name}}</td>
+                <td>{{c.coachType}}</td>
+                <td>{{c.team.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

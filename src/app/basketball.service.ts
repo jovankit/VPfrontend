@@ -4,6 +4,9 @@ import { Player } from './model/Player';
 import { Observable } from 'rxjs';
 import { Team } from './model/Team';
 import { Coach } from './model/Coach';
+import { Game } from './model/Game';
+import { Referee } from './model/Referee';
+import { Delegation } from './model/Delegation';
 
 @Injectable({
   providedIn: 'root'
@@ -96,5 +99,113 @@ export class BasketballService {
 
   getAllTeams():Observable<Team[]>{
     return this.http.get<Team[]>("http://localhost:9080/api/teams");
+  }
+
+  getTeam(id:Number):Observable<Team>{
+    return this.http.get<Team>(`http://localhost:9080/api/teams/${id}`);
+  }
+
+  deleteTeam(id:Number):Observable<Team>{
+    return this.http.delete<Team>(`http://localhost:9080/api/teams/delete/${id}`);
+  }
+
+  saveTeam(
+    name:String,
+    address:String,
+    sponsor:String,
+    homeField:String
+  ):Observable<Team>{
+    return this.http.post<Team>("http://localhost:9080/api/teams/add",{
+      "name":name,
+    "address":address,
+    "sponsor":sponsor,
+    "homeField":homeField
+    });
+  }
+
+  editTeam(
+    id:Number,
+    name:String,
+    address:String,
+    sponsor:String,
+    homeField:String
+  ):Observable<Team>{
+    return this.http.put<Team>(`http://localhost:9080/api/teams/edit/${id}`,{
+      "name":name,
+    "address":address,
+    "sponsor":sponsor,
+    "homeField":homeField
+    });
+  }
+
+  pointsToTeam(id:Number,points:Number):Observable<Team>{
+    return this.http.post<Team>(`http://localhost:9080/api/teams/increase/${id}`,{
+      "points":points
+    });
+  }
+
+  getAllGames():Observable<Game[]>{
+    return this.http.get<Game[]>("http://localhost:9080/api/games");
+  }
+
+  getGame(id:Number):Observable<Game>{
+    return this.http.get<Game>(`http://localhost:9080/api/games/${id}`);
+  }
+
+  deleteGame(id:Number):Observable<Game>{
+    return this.http.delete<Game>(`http://localhost:9080/api/games/delete/${id}`);
+  }
+
+  saveGame(
+    name:String,
+    result:String,
+    dateOfMaintenance:Date,
+    refereesId:Number[],
+    delegation:Number,
+    homeTeam:Number,
+    awayTeam:Number,
+    players:Number[]
+  ):Observable<Game>{
+    return this.http.post<Game>("http://localhost:9080/api/games/add",{
+      "name":name,
+      "result":result,
+      "dateOfMaintenance":dateOfMaintenance,
+      "refereesId":refereesId,
+      "delegation":delegation,
+      "homeTeam":homeTeam,
+      "awayTeam":awayTeam,
+      "players":players
+    });
+  }
+
+  editGame(
+    id:Number,
+    name:String,
+    result:String,
+    dateOfMaintenance:Date,
+    refereesId:Number[],
+    delegation:Number,
+    homeTeam:Number,
+    awayTeam:Number,
+    players:Number[]
+  ):Observable<Game>{
+    return this.http.put<Game>(`http://localhost:9080/api/games/edit/${id}`,{
+      "name":name,
+      "result":result,
+      "dateOfMaintenance":dateOfMaintenance,
+      "refereesId":refereesId,
+      "delegation":delegation,
+      "homeTeam":homeTeam,
+      "awayTeam":awayTeam,
+      "players":players
+    });
+  }
+
+  getAllReferee():Observable<Referee[]>{
+    return this.http.get<Referee[]>("http://localhost:9080/api/referees");
+  }
+  
+  getAllDelegation():Observable<Delegation[]>{
+    return this.http.get<Delegation[]>("http://localhost:9080/api/delegation");
   }
 }

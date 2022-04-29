@@ -9,6 +9,12 @@ import { ListPlayersComponent } from './components/list-players/list-players.com
 import { PlayerFormComponent } from './components/player-form/player-form.component';
 import { ListCoachComponent } from './components/list-coach/list-coach.component';
 import { CoachFormComponent } from './components/coach-form/coach-form.component';
+import { ListTeamsComponent } from './components/list-teams/list-teams.component';
+import { TeamFormComponent } from './components/team-form/team-form.component';
+import { TeamComponent } from './components/team/team.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ListGamesComponent } from './components/list-games/list-games.component';
+import { GamesFormComponent } from './components/games-form/games-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import { CoachFormComponent } from './components/coach-form/coach-form.component
     ListPlayersComponent,
     PlayerFormComponent,
     ListCoachComponent,
-    CoachFormComponent
+    CoachFormComponent,
+    ListTeamsComponent,
+    TeamFormComponent,
+    TeamComponent,
+    NavBarComponent,
+    ListGamesComponent,
+    GamesFormComponent
   ],
   imports: [
     BrowserModule,

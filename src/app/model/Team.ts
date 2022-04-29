@@ -1,3 +1,6 @@
+import { Coach } from "./Coach";
+import { Player } from "./Player";
+
 export interface Team{
     id:Number,
     name:String,
@@ -5,6 +8,6 @@ export interface Team{
     sponsor:String,
     homeField:String,
     points:Number,
-    players:[],
-    coaches:[]
+    players:Player[],
+    coaches:Coach[]
 }
