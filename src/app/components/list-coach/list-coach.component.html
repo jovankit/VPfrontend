@@ -1,0 +1,25 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Coach type</td>
+                <td>Team</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of coaches">
+                <td>{{c.name}}</td>
+                <td>{{c.coachType}}</td>
+                <td>{{c.team.name}}</td>
+                <td>
+                    <input type="button" value="Edit" routerLink="/coaches/add/{{c.id}}" class="btn btn-info">
+                    <input type="button" value="Delete" (click)="delete(c.id)" class="btn btn-danger">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" value="Add Coach" class="btn btn-info" routerLink="/coaches/add">
+</div>
+

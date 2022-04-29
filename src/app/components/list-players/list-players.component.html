@@ -1,0 +1,37 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Jersey Number</td>
+                <td>Position</td>
+                <td>Team</td>
+                <td>PPG</td>
+                <td>APG</td>
+                <td>RPG</td>
+                <td>MPG</td>
+                <td>Games Played</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of players">
+                <td>{{p.name}}</td>
+                <td>{{p.jerseyNumber}}</td>
+                <td>{{p.position}}</td>
+                <td>{{p.team.name}}</td>
+                <td>{{p.ppg}}</td>
+                <td>{{p.apg}}</td>
+                <td>{{p.rpg}}</td>
+                <td>{{p.mpg}}</td>
+                <td>{{p.gamesPlayed}}</td>
+                <td>
+                    <input type="button" value="Edit" routerLink="/players/add/{{p.id}}" class="btn btn-info">
+                    <input type="button" value="Delete" (click)="delete(p.id)" class="btn btn-danger">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" value="Add Player" class="btn btn-info" routerLink="/players/add">
+</div>
+

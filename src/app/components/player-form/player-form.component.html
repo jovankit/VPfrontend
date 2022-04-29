@@ -1,0 +1,40 @@
+<form [formGroup]="createPlayer" class="container" (ngSubmit)="submit()" >
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        id="name"
+        placeholder="Enter player name"
+        formControlName="name"
+      />
+    </div><br/>
+    <div class="form-group">
+        <label for="jerseyNumber">Jersy number</label>
+        <input
+          type="number"
+          name="jerseyNumber"
+          class="form-control"
+          id="jerseyNumber"
+          placeholder="Enter jersy number"
+          formControlName="jerseyNumber"
+        />
+      </div><br/>
+        <label for="position">Position</label>
+        <input
+        id="position"
+        name="position"
+        class="form-control"
+        type="text"
+        formControlName="position"
+        />
+        <br>
+        <div class="form-group">
+          <select class="form-control" formControlName="team">
+            <option *ngFor="let t of teams" [value]="t.id">{{t.name}}</option>
+          </select>
+        </div>
+        <br/><br/>
+    <button type="submit" class="btn btn-primary my-4">Submit</button>
+</form>
