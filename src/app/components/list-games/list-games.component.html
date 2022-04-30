@@ -13,8 +13,8 @@
         <tbody>
             <tr *ngFor="let g of games" routerLink="/games/get/{{g.id}}" class="choose">
                 <td>{{g.dateOfMaintenance}}</td>
-                <td>{{g.homeTeam}}</td>
-                <td>{{g.awayTeam}}</td>
+                <td>{{g.homeTeam.name}}</td>
+                <td>{{g.awayTeam.name}}</td>
                 <td>{{g.result}}</td>
                 <td>
                     <input type="button" value="Edit" routerLink="/games/add/{{g.id}}" class="btn btn-info">
@@ -23,6 +23,6 @@
             </tr>
         </tbody>
     </table>
-    <input type="button" value="Add Team" class="btn btn-info" routerLink="/games/add">
+    <input type="button" value="Add Game" class="btn btn-info" routerLink="/games/add">
 </div>
 

@@ -52,8 +52,42 @@ export class GamesFormComponent implements OnInit {
       })
       
     }
+
+    this.service.getAllReferee().subscribe({
+      next:(data)=>{
+        this.referees=data
+      },
+      error:(error)=>{
+        console.log(error)
+      }
+    })
+    this.service.getAllDelegation().subscribe({
+      next:(data)=>{
+        this.delegation=data
+      },
+      error:(error)=>{
+        console.log(error)
+      }
+    })
+    this.service.getAllTeams().subscribe({
+      next:(data)=>{
+        this.teams=data
+      },
+      error:(error)=>{
+        console.log(error)
+      }
+    })
+    this.service.getAllPlayers().subscribe({
+      next:(data)=>{
+        this.players=data
+      },
+      error:(error)=>{
+        console.log(error)
+      }
+    })
   }
   submit(){
+    console.log(this.createGame.controls['players'].value )
     if(this.isAddMode){
       this.service.saveGame(
         this.createGame.controls['result'].value,

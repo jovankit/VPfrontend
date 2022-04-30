@@ -1,48 +1,56 @@
 <app-nav-bar></app-nav-bar>
-<form [formGroup]="createTeam" class="container" (ngSubmit)="submit()" >
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input
-        type="text"
-        name="name"
-        class="form-control"
-        id="name"
-        placeholder="Enter team name"
-        formControlName="name"
-      />
-    </div><br/>
-    <div class="form-group">
-        <label for="name">Address</label>
+<form [formGroup]="createGame" class="container" (ngSubmit)="submit()" >
+  <div class="form-group">
+    <label for="homeTeam">Home team</label>
+    <select class="form-select" formControlName="homeTeam" id="homeTeam" >
+      <option *ngFor="let t of teams" [value]="t.id">{{t.name}}</option>
+    </select>
+  </div><br/>
+  <div class="form-group">
+    <label for="awayTeam">Away team</label>
+    <select class="form-select" formControlName="awayTeam" id="awayTeam" >
+      <option *ngFor="let t of teams" [value]="t.id">{{t.name}}</option>
+    </select>
+  </div><br/>
+      <div class="form-group">
+        <label for="dateOfMaintenance">Date</label>
         <input
-          type="text"
-          name="address"
+          type="datetime-local"
+          name="dateOfMaintenance"
           class="form-control"
-          id="address"
-          placeholder="Enter team address"
-          formControlName="address"
+          id="dateOfMaintenance"
+          placeholder="Enter game date"
+          formControlName="dateOfMaintenance"
         />
       </div><br/>
       <div class="form-group">
-        <label for="name">Sponsor</label>
+        <label for="result">Result</label>
         <input
           type="text"
-          name="sponsor"
+          name="result"
           class="form-control"
-          id="sponsor"
-          placeholder="Enter team sponsor"
-          formControlName="sponsor"
+          id="result"
+          placeholder="Enter game result"
+          formControlName="result"
         />
       </div><br/>
       <div class="form-group">
-        <label for="name">Home Field</label>
-        <input
-          type="text"
-          name="homeField"
-          class="form-control"
-          id="homeField"
-          placeholder="Enter team homeField"
-          formControlName="homeField"
-        />
+        <label for="players">Players</label>
+        <select class="form-select" formControlName="players" id="players" multiple>
+          <option *ngFor="let t of players" [value]="t.id">{{t.name}}</option>
+        </select>
+      </div><br/>
+      <div class="form-group">
+        <label for="referees">Referee</label>
+        <select class="form-select" formControlName="referees" id="referees" multiple>
+          <option *ngFor="let t of referees" [value]="t.id">{{t.level}}</option>
+        </select>
+      </div><br/>
+      <div class="form-group">
+        <label for="delegation">Delegation</label>
+        <select class="form-select" formControlName="delegation" id="delegation" >
+          <option *ngFor="let t of delegation" [value]="t.id">{{t.level}}</option>
+        </select>
       </div><br/>
     <button type="submit" class="btn btn-primary my-4">Submit</button>
 </form>
