@@ -11,6 +11,7 @@ import { TeamFormComponent } from './components/team-form/team-form.component';
 import { TeamComponent } from './components/team/team.component';
 
 const routes: Routes = [
+  { path: 'games/get/:id', component: TeamComponent},
   { path: 'games/add/:id', component: GamesFormComponent},
   { path: 'games/add', component: GamesFormComponent},
   { path: 'games', component: ListGamesComponent},

@@ -1,0 +1,61 @@
+<app-nav-bar></app-nav-bar>
+<div class="text-center">
+    <h1>{{team?.name}}</h1>
+    <br>
+    <div>Address: {{team?.address}}</div>
+    <div>Sponsor: {{team?.sponsor}}</div>
+    <div>Home Field: {{team?.homeField}}</div>
+    <div>Points: {{team?.points}}</div>
+    <br>
+</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Jersey Number</td>
+                <td>Position</td>
+                <td>Team</td>
+                <td>PPG</td>
+                <td>APG</td>
+                <td>RPG</td>
+                <td>MPG</td>
+                <td>Games Played</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of players">
+                <td>{{p.name}}</td>
+                <td>{{p.jerseyNumber}}</td>
+                <td>{{p.position}}</td>
+                <td>{{p.team.name}}</td>
+                <td>{{p.ppg}}</td>
+                <td>{{p.apg}}</td>
+                <td>{{p.rpg}}</td>
+                <td>{{p.mpg}}</td>
+                <td>{{p.gamesPlayed}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Coach type</td>
+                <td>Team</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of coaches">
+                <td>{{c.name}}</td>
+                <td>{{c.coachType}}</td>
+                <td>{{c.team.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

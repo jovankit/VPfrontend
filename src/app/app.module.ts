@@ -15,6 +15,7 @@ import { TeamComponent } from './components/team/team.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ListGamesComponent } from './components/list-games/list-games.component';
 import { GamesFormComponent } from './components/games-form/games-form.component';
+import { GameComponent } from './components/game/game.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { GamesFormComponent } from './components/games-form/games-form.component
     TeamComponent,
     NavBarComponent,
     ListGamesComponent,
-    GamesFormComponent
+    GamesFormComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
