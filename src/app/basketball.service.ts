@@ -165,6 +165,7 @@ export class BasketballService {
     awayTeam:Number,
     players:Number[]
   ):Observable<Game>{
+    console.log(dateOfMaintenance)
     return this.http.post<Game>("http://localhost:9080/api/games/add",{
       "result":result,
       "dateOfMaintenance":dateOfMaintenance,

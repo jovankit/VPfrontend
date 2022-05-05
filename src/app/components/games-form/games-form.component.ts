@@ -87,7 +87,8 @@ export class GamesFormComponent implements OnInit {
     })
   }
   submit(){
-    console.log(this.createGame.controls['players'].value )
+    
+    console.log(this.createGame.controls['dateOfMaintenance'].value )
     if(this.isAddMode){
       this.service.saveGame(
         this.createGame.controls['result'].value,

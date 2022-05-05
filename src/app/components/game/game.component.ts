@@ -44,8 +44,4 @@ export class GameComponent implements OnInit {
       }
     })
   }
-click(){
-  console.log(this.game)
-  console.log(this.homePlayers)
-}
 }
