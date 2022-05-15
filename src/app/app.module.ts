@@ -16,6 +16,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ListGamesComponent } from './components/list-games/list-games.component';
 import { GamesFormComponent } from './components/games-form/games-form.component';
 import { GameComponent } from './components/game/game.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { GameComponent } from './components/game/game.component';
     NavBarComponent,
     ListGamesComponent,
     GamesFormComponent,
-    GameComponent
+    GameComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

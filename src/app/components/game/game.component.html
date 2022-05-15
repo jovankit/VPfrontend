@@ -2,7 +2,7 @@
 <div class="container">
     <h1 class="text-center">{{game?.result}}</h1>
     <h3 class="text-center">{{game?.dateOfMaintenance | date:"hh:mm"}}</h3>
-    <h5 class="text-center">{{game?.dateOfMaintenance | date:"mm.dd.yyyy"}}</h5>
+    <h5 class="text-center">{{game?.dateOfMaintenance | date:"YYYY.MM.dd"}}</h5>
     <div class="row">
         <div class="col-6 text-center">
             <h1>{{game?.homeTeam?.name}}</h1>
@@ -22,10 +22,6 @@
                         <td>Jersey Number</td>
                         <td>Position</td>
                         <td>Team</td>
-                        <td>PPG</td>
-                        <td>APG</td>
-                        <td>RPG</td>
-                        <td>MPG</td>
                         <td>Games Played</td>
                     </tr>
                 </thead>
@@ -35,10 +31,6 @@
                         <td>{{p.jerseyNumber}}</td>
                         <td>{{p.position}}</td>
                         <td>{{p.team.name}}</td>
-                        <td>{{p.ppg}}</td>
-                        <td>{{p.apg}}</td>
-                        <td>{{p.rpg}}</td>
-                        <td>{{p.mpg}}</td>
                         <td>{{p.gamesPlayed}}</td>
                     </tr>
                 </tbody>
@@ -52,10 +44,6 @@
                         <td>Jersey Number</td>
                         <td>Position</td>
                         <td>Team</td>
-                        <td>PPG</td>
-                        <td>APG</td>
-                        <td>RPG</td>
-                        <td>MPG</td>
                         <td>Games Played</td>
                     </tr>
                 </thead>
@@ -65,10 +53,6 @@
                         <td>{{p.jerseyNumber}}</td>
                         <td>{{p.position}}</td>
                         <td>{{p.team.name}}</td>
-                        <td>{{p.ppg}}</td>
-                        <td>{{p.apg}}</td>
-                        <td>{{p.rpg}}</td>
-                        <td>{{p.mpg}}</td>
                         <td>{{p.gamesPlayed}}</td>
                     </tr>
                 </tbody>
@@ -137,3 +121,4 @@
     </div>
     <h5 class="text-center">Delegation level: {{game?.delegation?.level}}</h5>
 </div>
+<app-footer></app-footer>
